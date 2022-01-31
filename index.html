@@ -1,0 +1,41 @@
+<!doctype html>
+
+<html>
+<head>
+    <title>Sim Figures Out Webpack</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="./index.css">
+
+</head>
+
+<body>
+
+    <!-- Minified React: "https://unpkg.com/react@17/umd/react.production.min.js" -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script type="text/javascript">
+    if (typeof React == 'undefined') {
+        console.warn("Importing fallback script: React");
+        document.write(unescape(
+            "%3Cscript src='./js/dependencies/react.development.js' type='text/javascript' crossorigin%3E%3C/script%3E"
+        ));
+    }
+    </script>
+
+    <!-- Minified ReactDOM: "https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" -->
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script type="text/javascript">
+    if (typeof ReactDOM == 'undefined') {
+        console.warn("Importing fallback script: React DOM");
+        document.write(unescape(
+            "%3Cscript src='./js/dependencies/react-dom.development.js' type='text/javascript' crossorigin%3E%3C/script%3E"
+        ));
+    }
+    </script>
+
+    <div id="app-mount"></div>
+
+    <script src="./index.js" type="module"></script>
+
+</body>
+</html>
+
