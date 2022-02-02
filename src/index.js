@@ -8,7 +8,7 @@ class TestComponent extends React.Component {
             {
             id: "hello",
             },
-            element("span", null, getMessage()),
+            element("span", null, getMessage(0)),
         );
     }
 }

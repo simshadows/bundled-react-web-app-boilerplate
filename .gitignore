@@ -1,3 +1,12 @@
+################################
+### Project-Specific Ignores ###
+################################
+
+# Temporary while we set up the tooling
+/dist/*
+!/dist/index.html
+!/dist/index.css
+
 ##############################
 ### yarn Generated Ignores ###
 ##############################
@@ -108,7 +117,7 @@ out
 
 # Nuxt.js build / generate output
 .nuxt
-dist
+#dist
 
 # Gatsby files
 .cache/

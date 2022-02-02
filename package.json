@@ -1,4 +1,12 @@
 {
   "name": "react-tsx-ghpages-toolchain-test",
-  "packageManager": "yarn@3.1.1"
+  "packageManager": "yarn@3.1.1",
+  "devDependencies": {
+    "webpack": "^5.68.0",
+    "webpack-cli": "^4.9.2"
+  },
+  "scripts": {
+    "build": "webpack",
+    "serve": "python3 -m http.server --directory ./dist"
+  }
 }
