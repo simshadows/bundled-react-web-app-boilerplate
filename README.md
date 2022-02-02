@@ -38,3 +38,8 @@ yarn build
 yarn serve
 ```
 
+Or, you can use webpack's development server:
+```
+yarn start
+```
+
