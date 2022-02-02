@@ -1,3 +1,6 @@
+import React from "react";
+import ReactDOM from "react-dom";
+
 import {getMessage} from "./hello.js";
 
 const element = React.createElement;
@@ -8,7 +11,7 @@ class TestComponent extends React.Component {
             {
             id: "hello",
             },
-            element("span", null, getMessage(1)),
+            element("span", null, getMessage(2)),
         );
     }
 }
