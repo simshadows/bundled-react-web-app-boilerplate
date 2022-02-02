@@ -1,15 +1,16 @@
 {
   "name": "react-tsx-ghpages-toolchain-test",
+  "license": "Unlicense",
   "packageManager": "yarn@3.1.1",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack serve --mode development",
+    "serve": "python3 -m http.server --directory ./dist"
+  },
   "devDependencies": {
     "webpack": "^5.68.0",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.7.4"
-  },
-  "scripts": {
-    "build": "webpack",
-    "start": "webpack serve",
-    "serve": "python3 -m http.server --directory ./dist"
   },
   "dependencies": {
     "react": "^17.0.2",
