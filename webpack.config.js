@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 // Production values by default
 const config = {
     mode: "production",
-    entry: path.resolve(__dirname, "src", "index.js"),
+    entry: path.resolve(__dirname, "src", "index.ts"),
     output: {
         filename: "index.js",
         path: path.resolve(__dirname, "dist"),
@@ -31,6 +31,19 @@ const config = {
                         presets: [
                             ["@babel/preset-env"],
                             ["@babel/preset-react"],
+                        ],
+                    },
+                },
+            },
+            {
+                test: /\.ts$/i,
+                use: {
+                    loader: "babel-loader",
+                    options: {
+                        presets: [
+                            ["@babel/preset-env"],
+                            ["@babel/preset-react"],
+                            ["@babel/preset-typescript"],
                         ],
                     },
                 },
