@@ -12,7 +12,7 @@ class TestComponent extends React.Component {
             {
             id: "hello",
             },
-            element(HelloMessage, {num: 5}, null),
+            element(HelloMessage, {num: 6}, null),
         );
     }
 }

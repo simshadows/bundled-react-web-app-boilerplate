@@ -23,6 +23,18 @@ const config = {
     ],
     module: {
         rules: [
+            {
+                test: /\.js$/i,
+                use: {
+                    loader: "babel-loader",
+                    options: {
+                        presets: [
+                            ["@babel/preset-env"],
+                            ["@babel/preset-react"],
+                        ],
+                    },
+                },
+            },
             { test: /\.css$/i, use: [MiniCssExtractPlugin.loader, "css-loader"] },
         ],
     },
