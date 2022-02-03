@@ -1,4 +1,12 @@
-export function getMessage(num) {
-    return `I have no idea what I'm doing! (Version ${num + 1})`;
+import React from "react";
+
+import {getMessage} from "./getMessage.js";
+
+const element = React.createElement;
+
+export class HelloMessage extends React.Component {
+    render() {
+        return element("span", {className: "message"}, getMessage(this.props.num));
+    }
 }
 

@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import {getMessage} from "./hello.js";
+import {HelloMessage} from "./hello.js";
 
 const element = React.createElement;
 
@@ -11,7 +11,7 @@ class TestComponent extends React.Component {
             {
             id: "hello",
             },
-            element("span", null, getMessage(2)),
+            element(HelloMessage, {num: 3}, null),
         );
     }
 }
