@@ -1,4 +1,5 @@
 const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 // Production values by default
 const config = {
@@ -8,6 +9,14 @@ const config = {
         filename: "index.js",
         path: path.resolve(__dirname, "dist"),
     },
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: "Sim Figures Out Webpack",
+            minify: false, // TODO: How do we automatically change this depending on yarn build or yarn start?
+            template: "./src/index.html",
+        }),
+    ],
+
     devServer: {
         static: {
             directory: path.join(__dirname, "dist"),

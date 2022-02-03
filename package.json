@@ -6,13 +6,13 @@
   "description": "I learn to incrementally set up a React + TSX toolchain for building and hosting on GitHub Pages!",
   "keywords": [],
   "packageManager": "yarn@3.1.1",
-  "private": false,
   "scripts": {
     "build": "webpack",
     "start": "webpack serve --mode development",
     "serve": "python3 -m http.server --directory ./dist"
   },
   "devDependencies": {
+    "html-webpack-plugin": "^5.5.0",
     "webpack": "^5.68.0",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.7.4"
