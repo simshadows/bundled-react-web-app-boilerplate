@@ -1,6 +1,7 @@
 import React from "react";
 
 import {getMessage} from "./getMessage.js";
+import "./hello.css";
 
 const element = React.createElement;
 

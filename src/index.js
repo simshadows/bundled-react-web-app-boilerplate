@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import {HelloMessage} from "./hello.js";
+import "./index.css";
 
 const element = React.createElement;
 
@@ -11,7 +12,7 @@ class TestComponent extends React.Component {
             {
             id: "hello",
             },
-            element(HelloMessage, {num: 4}, null),
+            element(HelloMessage, {num: 5}, null),
         );
     }
 }

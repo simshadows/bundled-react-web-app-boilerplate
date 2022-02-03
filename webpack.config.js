@@ -1,21 +1,31 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 // Production values by default
 const config = {
-    entry: "./src/index.js",
     mode: "production",
+    entry: path.resolve(__dirname, "src", "index.js"),
     output: {
         filename: "index.js",
         path: path.resolve(__dirname, "dist"),
+        clean: true,
     },
     plugins: [
         new HtmlWebpackPlugin({
             title: "Sim Figures Out Webpack",
             minify: false, // TODO: How do we automatically change this depending on yarn build or yarn start?
-            template: "./src/index.html",
+            template: path.resolve(__dirname, "src", "index.html"),
+        }),
+        new MiniCssExtractPlugin({
+            filename: "index.css",
         }),
     ],
+    module: {
+        rules: [
+            { test: /\.css$/i, use: [MiniCssExtractPlugin.loader, "css-loader"] },
+        ],
+    },
 
     devServer: {
         static: {

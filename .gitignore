@@ -3,8 +3,7 @@
 ################################
 
 # Temporary while we set up the tooling
-/dist/*
-!/dist/index.css
+/dist
 
 ##############################
 ### yarn Generated Ignores ###

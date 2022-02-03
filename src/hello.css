@@ -1,8 +1,5 @@
-#hello {
-    color: red;
-}
-
 .message {
     font-family: monospace;
+    font-weight: bold;
 }
 
