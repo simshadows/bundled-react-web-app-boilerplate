@@ -1,4 +1,7 @@
 {
+    "include": [
+        "src/custom.d.ts",
+    ],
     "compilerOptions": {
         "noImplicitAny": true,
         "module": "es6",

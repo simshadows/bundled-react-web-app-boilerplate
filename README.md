@@ -43,3 +43,9 @@ Or, you can use webpack's development server:
 yarn start
 ```
 
+## License
+
+All original source code is licensed under the [*The Unlicense (Unlicense)*](https://unlicense.org/).
+
+All original images are licensed under the [*CC0 1.0 Universal (CC0 1.0)*](https://creativecommons.org/publicdomain/zero/1.0/).
+

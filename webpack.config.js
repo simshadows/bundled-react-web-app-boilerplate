@@ -42,6 +42,14 @@ const config = {
     module: {
         rules: [
             {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: "asset/resource",
+            },
+            {
+                test: /\.css$/i,
+                use: [MiniCssExtractPlugin.loader, "css-loader"],
+            },
+            {
                 test: /\.js$/i,
                 use: {
                     loader: "babel-loader",
@@ -66,7 +74,6 @@ const config = {
                     },
                 },
             },
-            { test: /\.css$/i, use: [MiniCssExtractPlugin.loader, "css-loader"] },
         ],
     },
 
