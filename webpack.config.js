@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 // Production values by default
 const config = {
@@ -11,6 +12,12 @@ const config = {
         path: path.resolve(__dirname, "dist"),
         clean: true,
     },
+    resolve: {
+        // This is done as a hack to get the Typescript tooling to work since you're not allowed
+        // to include the ".ts" extension when importing modules within a Typescript file.
+        // I would prefer if I just included file extensions explicitly.
+        extensions: [".ts", ".js"],
+    },
     plugins: [
         new HtmlWebpackPlugin({
             title: "Sim Figures Out Webpack",
@@ -19,6 +26,17 @@ const config = {
         }),
         new MiniCssExtractPlugin({
             filename: "index.css",
+        }),
+        new ForkTsCheckerWebpackPlugin({
+            typescript: {
+                diagnosticOptions: { // To be honest, I have no idea what this is doing yet
+                    semantic: true,
+                    syntactic: true,
+                    declaration: true,
+                    global: true,
+                },
+                mode: "write-references",
+            },
         }),
     ],
     module: {

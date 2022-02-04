@@ -1,14 +1,13 @@
 import React from "react";
 
-import {getMessage} from "./getMessage.ts";
+import {getMessage} from "./getMessage";
 import "./hello.css";
 
 const element = React.createElement;
 
-export class HelloMessage extends React.Component {
+export class HelloMessage extends React.Component<{num: number}> {
     render() {
-        //const num = this.props.num as number;
-        const num = "lmao"; // This should be caught by type checking... but it doesn't.
+        const num = this.props.num as number;
         return element("span", {className: "message"}, getMessage(num));
     }
 }
