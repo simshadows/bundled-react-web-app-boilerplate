@@ -8,7 +8,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 // Production values by default
 const config = (mode) => ({
     mode: mode,
-    entry: path.resolve(__dirname, "src", "index.ts"),
+    entry: path.resolve(__dirname, "src", "_assets", "index.ts"),
     output: {
         filename: "index.js",
         path: path.resolve(__dirname, "dist"),

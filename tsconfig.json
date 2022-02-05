@@ -1,6 +1,6 @@
 {
     "include": [
-        "src/custom.d.ts",
+        "internals/global.d.ts",
     ],
     "compilerOptions": {
         "allowJs": true,

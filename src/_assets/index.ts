@@ -13,7 +13,7 @@ const element = React.createElement;
 class TestComponent extends React.Component {
     render() {
         return element("div", { id: "hello" },
-            element(HelloMessage, {num: 9}, null),
+            element(HelloMessage, {num: 10}, null),
             element("br", null, null),
             element("br", null, null),
             element(ImageLoader, {src: placeholderRaster}, null),
