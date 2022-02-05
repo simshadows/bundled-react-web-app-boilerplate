@@ -2,7 +2,6 @@
 ### Project-Specific Ignores ###
 ################################
 
-# Temporary while we set up the tooling
 /dist
 
 ##############################

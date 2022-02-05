@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`gets 42, adds 1, and returns the expected string 1`] = `
+<span
+  className="message"
+>
+  I have no idea what I'm doing! (Version 43)
+</span>
+`;

@@ -3,11 +3,12 @@
         "src/custom.d.ts",
     ],
     "compilerOptions": {
-        "noImplicitAny": true,
+        "allowJs": true,
+        "jsx": "react",
         "module": "es6",
         "target": "es5",
-        "jsx": "react",
-        "allowJs": true,
+        "esModuleInterop": true,
+        "noImplicitAny": true,
         "moduleResolution": "node",
         "allowSyntheticDefaultImports": true
     }
