@@ -22,6 +22,7 @@ const config = (mode) => ({
         new HtmlWebpackPlugin({
             minify: (mode === "production"),
             template: path.resolve(__dirname, "src", "index.html"),
+            favicon: path.resolve(__dirname, "src", "favicon.png"),
 
             title: "Sim Figures Out Webpack",
             author: "simshadows",
