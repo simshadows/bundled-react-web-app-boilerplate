@@ -4,8 +4,8 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 // Production values by default
-const config = {
-    mode: "production",
+const config = (mode) => ({
+    mode: mode,
     entry: path.resolve(__dirname, "src", "index.ts"),
     output: {
         filename: "index.js",
@@ -20,9 +20,15 @@ const config = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: "Sim Figures Out Webpack",
-            minify: false, // TODO: How do we automatically change this depending on yarn build or yarn start?
+            minify: (mode === "production"),
             template: path.resolve(__dirname, "src", "index.html"),
+
+            title: "Sim Figures Out Webpack",
+            author: "simshadows",
+            description: "I have no idea what I'm doing!",
+            keywords: "minimal, boilerplate, webpack, react, typescript",
+            //canonical: "currently unused",
+            //embedImage: "currently unused",
         }),
         new MiniCssExtractPlugin({
             filename: "index.css",
@@ -84,7 +90,7 @@ const config = {
         compress: true,
         port: 8000,
     },
-};
+});
 
 module.exports = (env, argv) => {
     console.log("env:");
@@ -94,9 +100,10 @@ module.exports = (env, argv) => {
     console.log(argv);
     console.log();
 
+    let mode = "production";
     if (["production", "development", "none"].includes(argv.mode)) {
-        config.mode = argv.mode;
+        mode = argv.mode;
     }
-    return config;
+    return config(mode);
 };
 

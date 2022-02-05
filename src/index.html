@@ -4,7 +4,26 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
 
     <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="author" content="<%- htmlWebpackPlugin.options.author %>">
+    <meta name="description" content="<%- htmlWebpackPlugin.options.description %>">
+    <meta name="keywords" content="<%- htmlWebpackPlugin.options.keywords %>">
+    <!-- <link rel="canonical" href="<%- htmlWebpackPlugin.options.canonical %>"> -->
+
+    <!-- Facebook Meta Tags -->
+    <!-- <meta property="og:url" content="<%- htmlWebpackPlugin.options.canonical %>"> -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="<%- htmlWebpackPlugin.options.title %>">
+    <meta property="og:description" content="<%- htmlWebpackPlugin.options.description %>">
+    <!-- <meta property="og:image" content="<%- htmlWebpackPlugin.options.embedImage %>"> -->
+
+    <!-- Twitter Meta Tags -->
+    <!-- <meta property="twitter:card" content="summary_large_image"> -->
+    <meta property="twitter:title" content="<%- htmlWebpackPlugin.options.title %>">
+    <meta property="twitter:description" content="<%- htmlWebpackPlugin.options.description %>">
+    <!-- <meta property="twitter:image" content="<%- htmlWebpackPlugin.options.embedImage %>"> -->
 </head>
 <body>
     <div id="app-mount"></div>
