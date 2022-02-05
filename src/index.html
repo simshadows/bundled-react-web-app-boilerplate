@@ -1,29 +1,36 @@
+<% const CANONICAL   = htmlWebpackPlugin.options.canonical %>
+<% const TITLE       = htmlWebpackPlugin.options.title %>
+<% const AUTHOR      = htmlWebpackPlugin.options.author %>
+<% const DESCRIPTION = htmlWebpackPlugin.options.description %>
+<% const KEYWORDS    = htmlWebpackPlugin.options.keywords %>
+<% const EMBED_IMAGE = htmlWebpackPlugin.options.embedImage %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title><%= htmlWebpackPlugin.options.title %></title>
+    <% if (TITLE) { %><title><%= TITLE %></title><% } %>
 
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta name="author" content="<%- htmlWebpackPlugin.options.author %>">
-    <meta name="description" content="<%- htmlWebpackPlugin.options.description %>">
-    <meta name="keywords" content="<%- htmlWebpackPlugin.options.keywords %>">
-    <!-- <link rel="canonical" href="<%- htmlWebpackPlugin.options.canonical %>"> -->
+    <% if (CANONICAL  ) { %><link rel="canonical" href="<%- CANONICAL %>"><% } %>
+    <% if (AUTHOR     ) { %><meta name="author" content="<%- AUTHOR %>"><% } %>
+    <% if (DESCRIPTION) { %><meta name="description" content="<%- DESCRIPTION %>"><% } %>
+    <% if (KEYWORDS   ) { %><meta name="keywords" content="<%- KEYWORDS %>"><% } %>
 
     <!-- Facebook Meta Tags -->
-    <!-- <meta property="og:url" content="<%- htmlWebpackPlugin.options.canonical %>"> -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="<%- htmlWebpackPlugin.options.title %>">
-    <meta property="og:description" content="<%- htmlWebpackPlugin.options.description %>">
-    <!-- <meta property="og:image" content="<%- htmlWebpackPlugin.options.embedImage %>"> -->
+    <% if (CANONICAL  ) { %><meta property="og:url" content="<%- CANONICAL %>"><% } %>
+    <% if (TITLE      ) { %><meta property="og:title" content="<%- TITLE %>"><% } %>
+    <% if (DESCRIPTION) { %><meta property="og:description" content="<%- DESCRIPTION %>"><% } %>
+    <% if (EMBED_IMAGE) { %><meta property="og:image" content="<%- EMBED_IMAGE %>"><% } %>
 
     <!-- Twitter Meta Tags -->
-    <!-- <meta property="twitter:card" content="summary_large_image"> -->
-    <meta property="twitter:title" content="<%- htmlWebpackPlugin.options.title %>">
-    <meta property="twitter:description" content="<%- htmlWebpackPlugin.options.description %>">
-    <!-- <meta property="twitter:image" content="<%- htmlWebpackPlugin.options.embedImage %>"> -->
+    <% if (EMBED_IMAGE) { %><meta property="twitter:card" content="summary_large_image"><% } %>
+    <% if (TITLE      ) { %><meta property="twitter:title" content="<%- TITLE %>"><% } %>
+    <% if (DESCRIPTION) { %><meta property="twitter:description" content="<%- DESCRIPTION %>"><% } %>
+    <% if (EMBED_IMAGE) { %><meta property="twitter:image" content="<%- htmlWebpackPlugin.options.embedImage %>"><% } %>
 
 </head>
 <body>

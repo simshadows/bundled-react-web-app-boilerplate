@@ -43,6 +43,17 @@ Or, you can use webpack's development server:
 yarn start
 ```
 
+## Not Yet Implemented
+
+In trying to figure out the nicest and most well-supported ways of doing things, I've run into a couple features that I'm not sure how to include in this boilerplate. These are:
+
+- Moving all auto-generated files to `_generated` without symlinking or creating additional hardlinks.
+    - I want to avoid dependence on filesystem features.
+    - Probably the only auto-generated file/directory I don't want to move into `_generated` is `.yarn`.
+- Moving all tooling configuration (such as `webpack.config.js`) into `internals`.
+- Mobile icons.
+    - I'm still deciding on whether I want to use [`favicons-webpack-plugin`](https://github.com/jantimon/favicons-webpack-plugin).
+
 ## License
 
 All original source code is licensed under the [*The Unlicense (Unlicense)*](https://unlicense.org/).

@@ -28,8 +28,6 @@ const config = (mode) => ({
             author: "simshadows",
             description: "I have no idea what I'm doing!",
             keywords: "minimal, boilerplate, webpack, react, typescript",
-            //canonical: "currently unused",
-            //embedImage: "currently unused",
         }),
         new MiniCssExtractPlugin({
             filename: "index.css",
