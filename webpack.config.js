@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 
 // Production values by default
 const config = (mode) => ({
@@ -82,8 +83,10 @@ const config = (mode) => ({
             },
         ],
     },
-    optimization: (mode !== "production") ? undefined : {
+    optimization: {
+        minimize: (mode === "production"),
         minimizer: [
+            new TerserPlugin(),
             new CssMinimizerPlugin(),
         ],
     },
