@@ -5,11 +5,28 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 
-const config = (mode) => ({
-    mode: mode,
+function htmlWebpackPluginCommon(configArgs, mergeIn) {
+    // Merge mergeIn with some common options
+    return Object.assign({
+        filename: "index.html",
+        template: path.resolve(__dirname, "src", "index.html"),
+        chunks: ["root"],
+
+        minify: (configArgs.mode === "production"),
+
+        title: "Sim Figures Out Webpack",
+        author: "simshadows",
+        description: "I have no idea what I'm doing!",
+        keywords: "minimal, boilerplate, webpack, react, typescript",
+        favicon: path.resolve(__dirname, "src", "favicon.png"),
+    }, mergeIn);
+}
+
+const config = (configArgs) => ({
+    mode: configArgs.mode,
     entry: {
-        root: path.resolve(__dirname, "src", "_assets", "index.ts"),
-        innerpage: path.resolve(__dirname, "src", "innerpage", "_assets", "index.ts"),
+        "root": path.resolve(__dirname, "src", "_assets", "index.ts"),
+        "root/innerpage": path.resolve(__dirname, "src", "innerpage", "_assets", "index.ts"),
     },
     output: {
         filename: "[name]/index.js",
@@ -23,32 +40,15 @@ const config = (mode) => ({
         extensions: [".ts", ".js"],
     },
     plugins: [
-        new HtmlWebpackPlugin({
-            filename: "index.html",
-            template: path.resolve(__dirname, "src", "index.html"),
-            chunks: ["root"],
-
-            minify: (mode === "production"),
-
-            title: "Sim Figures Out Webpack",
-            author: "simshadows",
-            description: "I have no idea what I'm doing!",
-            keywords: "minimal, boilerplate, webpack, react, typescript",
-            favicon: path.resolve(__dirname, "src", "favicon.png"),
-        }),
-        new HtmlWebpackPlugin({
+        new HtmlWebpackPlugin(htmlWebpackPluginCommon(configArgs, {})),
+        new HtmlWebpackPlugin(htmlWebpackPluginCommon(configArgs, {
             filename: "innerpage/index.html",
             template: path.resolve(__dirname, "src", "innerpage", "index.html"),
-            chunks: ["innerpage"],
-
-            minify: (mode === "production"),
+            chunks: ["root/innerpage"],
 
             title: "Inner Page",
-            author: "simshadows",
-            description: "I have no idea what I'm doing!",
-            keywords: "minimal, boilerplate, webpack, react, typescript",
-            favicon: path.resolve(__dirname, "src", "favicon.png"),
-        }),
+            description: "I am an inner page!",
+        })),
         new MiniCssExtractPlugin({
             filename: "index.css",
         }),
@@ -102,7 +102,7 @@ const config = (mode) => ({
         ],
     },
     optimization: {
-        minimize: (mode === "production"),
+        minimize: (configArgs.mode === "production"),
         minimizer: [
             new TerserPlugin(),
             new CssMinimizerPlugin(),
@@ -126,10 +126,14 @@ module.exports = (env, argv) => {
     console.log(argv);
     console.log();
 
-    let mode = "production";
+    const configArgs = {
+        mode: "production",
+    };
+    
     if (["production", "development", "none"].includes(argv.mode)) {
-        mode = argv.mode;
+        configArgs.mode = argv.mode;
     }
-    return config(mode);
+
+    return config(configArgs);
 };
 
