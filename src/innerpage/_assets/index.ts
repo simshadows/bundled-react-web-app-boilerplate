@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 import {HelloMessage} from "../../_common/HelloMessage";
 import {ImageLoader} from "../../_common/ImageLoader";
 import {NavComponent} from "../../_common/NavComponent";
-//import "./index.css"; // Add in later!
+import "./index.css";
 
 import placeholderRasterGreen from "./placeholder-raster-green.png";
 
