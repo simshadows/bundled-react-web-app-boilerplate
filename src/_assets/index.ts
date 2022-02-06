@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import {HelloMessage} from "./hello";
-import {ImageLoader} from "./imageLoader";
+import {ImageLoader} from "../_common/imageLoader";
 import "./index.css";
 
 import placeholderRaster from "./placeholder-raster.png";

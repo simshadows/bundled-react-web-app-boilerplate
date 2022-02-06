@@ -5,12 +5,14 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 
-// Production values by default
 const config = (mode) => ({
     mode: mode,
-    entry: path.resolve(__dirname, "src", "_assets", "index.ts"),
+    entry: {
+        root: path.resolve(__dirname, "src", "_assets", "index.ts"),
+        innerpage: path.resolve(__dirname, "src", "innerpage", "_assets", "index.ts"),
+    },
     output: {
-        filename: "index.js",
+        filename: "[name]/index.js",
         path: path.resolve(__dirname, "dist"),
         clean: true,
     },
@@ -22,14 +24,30 @@ const config = (mode) => ({
     },
     plugins: [
         new HtmlWebpackPlugin({
-            minify: (mode === "production"),
+            filename: "index.html",
             template: path.resolve(__dirname, "src", "index.html"),
-            favicon: path.resolve(__dirname, "src", "favicon.png"),
+            chunks: ["root"],
+
+            minify: (mode === "production"),
 
             title: "Sim Figures Out Webpack",
             author: "simshadows",
             description: "I have no idea what I'm doing!",
             keywords: "minimal, boilerplate, webpack, react, typescript",
+            favicon: path.resolve(__dirname, "src", "favicon.png"),
+        }),
+        new HtmlWebpackPlugin({
+            filename: "innerpage/index.html",
+            template: path.resolve(__dirname, "src", "innerpage", "index.html"),
+            chunks: ["innerpage"],
+
+            minify: (mode === "production"),
+
+            title: "Inner Page",
+            author: "simshadows",
+            description: "I have no idea what I'm doing!",
+            keywords: "minimal, boilerplate, webpack, react, typescript",
+            favicon: path.resolve(__dirname, "src", "favicon.png"),
         }),
         new MiniCssExtractPlugin({
             filename: "index.css",
