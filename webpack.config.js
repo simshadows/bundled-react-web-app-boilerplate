@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 function htmlWebpackPluginCommon(configArgs, mergeIn) {
     // Merge mergeIn with some common options
@@ -63,6 +64,11 @@ const config = (configArgs) => ({
                 },
                 mode: "write-references",
             },
+        }),
+        new CopyPlugin({
+            patterns: [
+                { from: "public" },
+            ],
         }),
     ],
     module: {

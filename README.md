@@ -117,6 +117,10 @@ In trying to figure out the nicest and most well-supported ways of doing things,
     - If I add `"include": ["internals/global.d.ts"],` to `tsconfig.json`, type checking no longer works. I have no idea why.
     - If I remove `internals/global.d.ts`, images can no longer be imported for some reason.
 
+## TODO
+
+I had to downgrade `copy-webpack-plugin` to `<10` due to an issue with `globby` (one of its dependencies). It might be incompatible with Yarn Berry's PnP model.
+
 ## License
 
 All original source code is licensed under the [*The Unlicense (Unlicense)*](https://unlicense.org/).
