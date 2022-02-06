@@ -53,6 +53,9 @@ In trying to figure out the nicest and most well-supported ways of doing things,
 - Moving all tooling configuration (such as `webpack.config.js`) into `internals`.
 - Mobile icons.
     - I'm still deciding on whether I want to use [`favicons-webpack-plugin`](https://github.com/jantimon/favicons-webpack-plugin).
+- I have no idea why `internals/global.d.ts` works even though I haven't explicitly referenced it anywhere.
+    - If I add `"include": ["internals/global.d.ts"],` to `tsconfig.json`, type checking no longer works. I have no idea why.
+    - If I remove `internals/global.d.ts`, images can no longer be imported for some reason.
 
 ## License
 

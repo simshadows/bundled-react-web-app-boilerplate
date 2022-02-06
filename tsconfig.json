@@ -1,7 +1,4 @@
 {
-    "include": [
-        "internals/global.d.ts",
-    ],
     "compilerOptions": {
         "allowJs": true,
         "jsx": "react",

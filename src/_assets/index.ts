@@ -14,7 +14,7 @@ const element = React.createElement;
 class TestComponent extends React.Component {
     render() {
         return element("div", {id: "hello"},
-            element(HelloMessage, {num: "kek"}, null), // TODO: Trying to force a type error. Change back to 10 when it's fixed!
+            element(HelloMessage, {num: 11}, null),
             element("br", null, null),
             element(NavComponent, {url: "./innerpage"}, null),
             element("br", null, null),

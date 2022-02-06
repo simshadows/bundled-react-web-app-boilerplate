@@ -3,7 +3,7 @@ import React from "react";
 const element = React.createElement;
 
 type NavComponentProps = {
-    url: number, // TODO: Trying to force a type error. Change back to string when it's fixed!
+    url: string,
 }
 
 export function NavComponent(props: NavComponentProps) {
