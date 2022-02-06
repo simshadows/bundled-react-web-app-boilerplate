@@ -11,7 +11,9 @@
     "build": "webpack",
     "build-dev": "webpack --mode development",
     "start": "webpack serve --mode development",
-    "serve": "python3 -m http.server --directory ./dist"
+    "serve": "python3 -m http.server --directory ./dist",
+    "ghpages-build": "webpack --output-path ./docs",
+    "ghpages-serve": "python3 -m http.server --directory ./docs"
   },
   "devDependencies": {
     "@babel/core": "^7.17.0",
