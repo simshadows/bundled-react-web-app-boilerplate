@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import {HelloMessage} from "./hello";
+import {HelloMessage} from "../_common/HelloMessage";
 import {ImageLoader} from "../_common/ImageLoader";
 import {NavComponent} from "../_common/NavComponent";
 import "./index.css";

@@ -10,7 +10,7 @@ function htmlWebpackPluginCommon(configArgs, mergeIn) {
     return Object.assign({
         filename: "index.html",
         template: path.resolve(__dirname, "src", "index.html"),
-        chunks: ["root"],
+        chunks: ["index"],
 
         minify: (configArgs.mode === "production"),
 
@@ -25,12 +25,13 @@ function htmlWebpackPluginCommon(configArgs, mergeIn) {
 const config = (configArgs) => ({
     mode: configArgs.mode,
     entry: {
-        "root": path.resolve(__dirname, "src", "_assets", "index.ts"),
-        "root/innerpage": path.resolve(__dirname, "src", "innerpage", "_assets", "index.ts"),
+        "index": path.resolve(__dirname, "src", "_assets", "index.ts"),
+        "innerpage/index": path.resolve(__dirname, "src", "innerpage", "_assets", "index.ts"),
     },
     output: {
-        filename: "[name]/index.js",
+        filename: "[name].js",
         path: path.resolve(__dirname, "dist"),
+        assetModuleFilename: "images/[name]-[hash][ext]",
         clean: true,
     },
     resolve: {
@@ -44,13 +45,13 @@ const config = (configArgs) => ({
         new HtmlWebpackPlugin(htmlWebpackPluginCommon(configArgs, {
             filename: "innerpage/index.html",
             template: path.resolve(__dirname, "src", "innerpage", "index.html"),
-            chunks: ["root/innerpage"],
+            chunks: ["innerpage/index"],
 
             title: "Inner Page",
             description: "I am an inner page!",
         })),
         new MiniCssExtractPlugin({
-            filename: "index.css",
+            filename: "[name].css",
         }),
         new ForkTsCheckerWebpackPlugin({
             typescript: {

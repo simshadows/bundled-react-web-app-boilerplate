@@ -1,7 +1,7 @@
 import React from "react";
 import renderer from 'react-test-renderer';
 
-import {HelloMessage} from "./hello";
+import {HelloMessage} from "./HelloMessage";
 
 const element = React.createElement;
 

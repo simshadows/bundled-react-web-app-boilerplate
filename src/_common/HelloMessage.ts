@@ -1,7 +1,7 @@
 import React from "react";
 
 import {getMessage} from "./getMessage";
-import "./hello.css";
+import "./HelloMessage.css";
 
 const element = React.createElement;
 
