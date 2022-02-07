@@ -18,7 +18,7 @@ This template is designed for:
     - I'm mainly talking about type safety, but this can also include things like automated testing to keep the app safe from breaking changes.
     - This is very important for applications with a fair bit of complexity. 
 - **Long-term maintainability.**
-    - I will only choose dependencies that are mature and I believe have the best chance of remaining relevant for at least 10 years. (Beyond 10 years is fair game, and honestly not really thinking about.)
+    - I will only choose dependencies that are mature and I believe have the best chance of remaining relevant for at least 10 years. (Beyond 10 years is fair game, and honestly not worth thinking about.)
     - Cool new tooling that improve on the process will always come and go. I don't want to constantly chase them for serious projects.
     - Only when something has proven itself as a worthy replacement with widespread adoption, a comparably strong support, and major benefits over my current choices will I consider jumping to a new stack.
 
@@ -34,12 +34,12 @@ The tooling I chose to include in this template are:
 
 This template does NOT include:
 
-- Any backend application code. It is front-end only.
+- Any backend application code. It is for front-end only.
 - JSX/TSX
     - I don't like it, so I didn't explicitly include it in this configuration, though I might add it in later if I start liking it.
     - If you want to use JSX/TSX, it shouldn't be hard to add support for it.
 - Any abstractions for managing complex trees of HTML files.
-    - I debated whether or not I should write helpers for this, but I opted out since it will significantly obscure the configuration files for a use-case that really isn't too unlikely.
+    - I debated whether or not I should write helpers for this, but I opted out since it will significantly obscure the configuration files for a use-case that really isn't that likely.
     - This template will still be useful for making *somewhat complex* trees of HTML files of maybe up to maybe 20 pages, mostly limited by your willingness to maintain the consistency of the configuration entries by hand.
     - If you reeeeealy need to maintain big document trees, only then should you build abstractions for it.
 
