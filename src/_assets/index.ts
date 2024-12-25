@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import {createRoot} from "react-dom/client";
 
 import {HelloMessage} from "../_common/HelloMessage";
 import {ImageLoader} from "../_common/ImageLoader";
@@ -27,8 +27,5 @@ class TestComponent extends React.Component {
     }
 }
 
-ReactDOM.render(
-    element(TestComponent, null),
-    document.getElementById("app-mount")
-);
-
+const root = createRoot(document.getElementById("app-mount"));
+root.render(element(TestComponent, null));

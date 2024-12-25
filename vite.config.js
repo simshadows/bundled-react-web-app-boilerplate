@@ -1,4 +1,5 @@
 import {defineConfig} from "vite";
+//import react from "@vitejs/plugin-react";
 import {render} from "ejs";
 
 const constants = {
@@ -25,5 +26,6 @@ export default defineConfig({
     build: {
         outDir: "dist",
     },
+    //plugins: [indexEjsPlugin, react()],
     plugins: [indexEjsPlugin],
 });

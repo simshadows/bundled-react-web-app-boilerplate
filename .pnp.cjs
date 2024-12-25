@@ -28,6 +28,8 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./",\
         "packageDependencies": [\
           ["ejs", "npm:3.1.10"],\
+          ["react", "npm:19.0.0"],\
+          ["react-dom", "virtual:bbb0b4da22b3fd7b5518c40156dae5761b2670747bc286bb6e100650c79b20df853daabeb50041e8b073eadff26ce72cda2bfbcb85fecb428c7b4225af367721#npm:19.0.0"],\
           ["vite", "virtual:bbb0b4da22b3fd7b5518c40156dae5761b2670747bc286bb6e100650c79b20df853daabeb50041e8b073eadff26ce72cda2bfbcb85fecb428c7b4225af367721#npm:6.0.5"]\
         ],\
         "linkType": "SOFT"\
@@ -1368,12 +1370,46 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["react", [\
+      ["npm:19.0.0", {\
+        "packageLocation": "./.yarn/cache/react-npm-19.0.0-e33c9aa1c0-2490969c50.zip/node_modules/react/",\
+        "packageDependencies": [\
+          ["react", "npm:19.0.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["react-dom", [\
+      ["npm:19.0.0", {\
+        "packageLocation": "./.yarn/cache/react-dom-npm-19.0.0-b7981c573e-aa64a2f199.zip/node_modules/react-dom/",\
+        "packageDependencies": [\
+          ["react-dom", "npm:19.0.0"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:bbb0b4da22b3fd7b5518c40156dae5761b2670747bc286bb6e100650c79b20df853daabeb50041e8b073eadff26ce72cda2bfbcb85fecb428c7b4225af367721#npm:19.0.0", {\
+        "packageLocation": "./.yarn/__virtual__/react-dom-virtual-3766cdfc85/0/cache/react-dom-npm-19.0.0-b7981c573e-aa64a2f199.zip/node_modules/react-dom/",\
+        "packageDependencies": [\
+          ["react-dom", "virtual:bbb0b4da22b3fd7b5518c40156dae5761b2670747bc286bb6e100650c79b20df853daabeb50041e8b073eadff26ce72cda2bfbcb85fecb428c7b4225af367721#npm:19.0.0"],\
+          ["@types/react", null],\
+          ["react", "npm:19.0.0"],\
+          ["scheduler", "npm:0.25.0"]\
+        ],\
+        "packagePeers": [\
+          "@types/react",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["react-web-app-boilerplate", [\
       ["workspace:.", {\
         "packageLocation": "./",\
         "packageDependencies": [\
           ["react-web-app-boilerplate", "workspace:."],\
           ["ejs", "npm:3.1.10"],\
+          ["react", "npm:19.0.0"],\
+          ["react-dom", "virtual:bbb0b4da22b3fd7b5518c40156dae5761b2670747bc286bb6e100650c79b20df853daabeb50041e8b073eadff26ce72cda2bfbcb85fecb428c7b4225af367721#npm:19.0.0"],\
           ["vite", "virtual:bbb0b4da22b3fd7b5518c40156dae5761b2670747bc286bb6e100650c79b20df853daabeb50041e8b073eadff26ce72cda2bfbcb85fecb428c7b4225af367721#npm:6.0.5"]\
         ],\
         "linkType": "SOFT"\
@@ -1454,6 +1490,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/safer-buffer-npm-2.1.2-8d5c0b705e-7eaf7a0cf3.zip/node_modules/safer-buffer/",\
         "packageDependencies": [\
           ["safer-buffer", "npm:2.1.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["scheduler", [\
+      ["npm:0.25.0", {\
+        "packageLocation": "./.yarn/cache/scheduler-npm-0.25.0-f89e6cad04-e661e38503.zip/node_modules/scheduler/",\
+        "packageDependencies": [\
+          ["scheduler", "npm:0.25.0"]\
         ],\
         "linkType": "HARD"\
       }]\
