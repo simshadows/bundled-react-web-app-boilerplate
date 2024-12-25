@@ -8,13 +8,10 @@
   "packageManager": "yarn@4.5.3",
   "scripts": {
     "testOLD": "jest",
-    "buildOLD": "webpack",
-    "build-devOLD": "webpack --mode development",
+    "build": "vite build --emptyOutDir",
+    "build-dev": "vite build --mode development",
     "start": "vite",
-    "startOLD": "webpack serve --mode development",
-    "serveOLD": "python3 -m http.server --directory ./dist",
-    "ghpages-buildOLD": "webpack --output-path ./docs",
-    "ghpages-serveOLD": "python3 -m http.server --directory ./docs"
+    "serve": "python3 -m http.server --directory ./dist"
   },
   "devDependencies": {
     "ejs": "^3.1.10",

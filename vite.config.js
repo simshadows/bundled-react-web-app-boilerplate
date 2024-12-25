@@ -1,5 +1,6 @@
+import {resolve} from "path";
+
 import {defineConfig} from "vite";
-//import react from "@vitejs/plugin-react";
 import {render} from "ejs";
 
 const constants = {
@@ -22,10 +23,18 @@ const indexEjsPlugin = {
 };
 
 export default defineConfig({
+    //appType: "mpa",
     root: "./src",
+    //publicDir: "./public",
     build: {
-        outDir: "dist",
+        outDir: "../dist",
+        rollupOptions: {
+            input: {
+                root: resolve(__dirname, "src/index.html"),
+                innerpage: resolve(__dirname, "src/innerpage/index.html"),
+            },
+        },
     },
-    //plugins: [indexEjsPlugin, react()],
     plugins: [indexEjsPlugin],
+    clearScreen: false,
 });

@@ -1,10 +1,10 @@
 <!-- This template is an exact copy of the parent HTML file. I'll try to figure out deduplication soon! -->
-<% const CANONICAL   = htmlWebpackPlugin.options.canonical %>
-<% const TITLE       = htmlWebpackPlugin.options.title %>
-<% const AUTHOR      = htmlWebpackPlugin.options.author %>
-<% const DESCRIPTION = htmlWebpackPlugin.options.description %>
-<% const KEYWORDS    = htmlWebpackPlugin.options.keywords %>
-<% const EMBED_IMAGE = htmlWebpackPlugin.options.embedImage %>
+<% const CANONICAL   = constants.canonical %>
+<% const TITLE       = constants.title %>
+<% const AUTHOR      = constants.author %>
+<% const DESCRIPTION = constants.description %>
+<% const KEYWORDS    = constants.keywords %>
+<% const EMBED_IMAGE = constants.embedImage %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -33,6 +33,7 @@
     <% if (DESCRIPTION) { %><meta property="twitter:description" content="<%- DESCRIPTION %>"><% } %>
     <% if (EMBED_IMAGE) { %><meta property="twitter:image" content="<%- EMBED_IMAGE %>"><% } %>
 
+    <script type="module" src="./_assets/index.ts"></script>
 </head>
 <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
