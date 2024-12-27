@@ -25,7 +25,6 @@ const indexEjsPlugin = {
 export default defineConfig({
     //appType: "mpa",
     root: "./src",
-    //publicDir: "./public",
     build: {
         outDir: "../dist",
         rollupOptions: {

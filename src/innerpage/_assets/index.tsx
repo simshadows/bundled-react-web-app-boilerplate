@@ -8,20 +8,18 @@ import "./index.css";
 
 import placeholderRasterGreen from "./placeholder-raster-green.png";
 
-const element = React.createElement;
-
 class TestComponent extends React.Component {
     render() {
-        return element("div", { id: "hello" },
-            element(HelloMessage, {num: 13}, null),
-            element("br", null, null),
-            element(NavComponent, {url: "../"}, null),
-            element("br", null, null),
-            element("br", null, null),
-            element(ImageLoader, {src: placeholderRasterGreen}, null),
-        );
+        return <div id="hello">
+            <HelloMessage num={1}/>
+            <br/>
+            <NavComponent url="../"/>
+            <br/>
+            <br/>
+            <ImageLoader src={placeholderRasterGreen}/>
+        </div>;
     }
 }
 
 const root = createRoot(document.getElementById("app-mount"));
-root.render(element(TestComponent, null));
+root.render(<TestComponent/>);

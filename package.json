@@ -9,7 +9,7 @@
   "scripts": {
     "testOLD": "jest",
     "build": "vite build --emptyOutDir",
-    "build-dev": "vite build --mode development",
+    "build-dev": "vite build --mode development --emptyOutDir",
     "start": "vite",
     "serve": "python3 -m http.server --directory ./dist"
   },
