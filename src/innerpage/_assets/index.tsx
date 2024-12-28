@@ -9,7 +9,7 @@ import "./index.css";
 import placeholderRasterGreen from "./placeholder-raster-green.png";
 
 class TestComponent extends React.Component {
-    render() {
+    override render() {
         return <div id="hello">
             <HelloMessage num={1}/>
             <br/>
@@ -21,5 +21,7 @@ class TestComponent extends React.Component {
     }
 }
 
-const root = createRoot(document.getElementById("app-mount"));
+const root_element = document.getElementById("app-mount");
+if (!root_element) throw new Error();
+const root = createRoot(root_element);
 root.render(<TestComponent/>);
