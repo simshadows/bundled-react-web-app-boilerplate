@@ -2,11 +2,11 @@
     "compilerOptions": {
         "allowJs": true,
         "jsx": "react",
-        "module": "es6",
+        "module": "nodenext",
         "target": "es5",
         "esModuleInterop": true,
         "noImplicitAny": true,
-        "moduleResolution": "node",
+        "moduleResolution": "nodenext",
         "allowSyntheticDefaultImports": true
     }
 }
