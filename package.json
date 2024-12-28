@@ -7,7 +7,7 @@
   "keywords": [],
   "packageManager": "yarn@4.5.3",
   "scripts": {
-    "build": "yarn test && yarn build-force",
+    "build": "yarn typecheck && yarn build-force",
     "build-dev": "yarn build-force --mode development",
     "build-force": "vite build --emptyOutDir",
     "start": "vite --port 8000",

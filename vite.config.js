@@ -27,6 +27,7 @@ export default defineConfig({
     root: "./src",
     build: {
         outDir: "../dist",
+        assetsInlineLimit: 1024*4,
         rollupOptions: {
             input: {
                 root: resolve(__dirname, "src/index.html"),

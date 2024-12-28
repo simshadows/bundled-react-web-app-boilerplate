@@ -1,6 +1,6 @@
-# Sim's Bundled React Web App Boilerplate
+# React Web App Boilerplate
 
-A hopefully minimal and uncomplicated base to get started building a bundled React web app!
+A minimal and uncomplicated base to get started building a bundled React web app!
 
 ## What's in it?
 
@@ -9,7 +9,12 @@ A hopefully minimal and uncomplicated base to get started building a bundled Rea
 - **React** (as the web UI library)
 - **TypeScript** (as the preferred scripting language due to its type safety and ecosystem maturity)
 - **Jest** (for automated testing)
+- **GitHub Actions deployment workflow for GitHub Pages**
 - No CSS preprocessor.
+
+## What should I do first?
+
+If you don't want to deploy to GitHub pages, delete the `.github` folder to disable the GitHub Actions workflow.
 
 ## How do I run this?
 
@@ -66,10 +71,8 @@ In trying to figure out the nicest and most well-supported ways of doing things,
 
 - Moving all tooling configuration into `internals`.
 - Mobile icons.
-    - I'm still deciding on whether I want to use [`favicons-webpack-plugin`](https://github.com/jantimon/favicons-webpack-plugin).
 - I have no idea why `internals/global.d.ts` works even though I haven't explicitly referenced it anywhere.
     - If I add `"include": ["internals/global.d.ts"],` to `tsconfig.json`, type checking no longer works. I have no idea why.
-    - If I remove `internals/global.d.ts`, images can no longer be imported for some reason.
 
 ## License
 
