@@ -4,12 +4,12 @@ import {defineConfig} from "vite";
 import {render} from "ejs";
 
 const constants = {
-    canonical: "PLACEHOLDER",
+    canonical: "https://bundled-react-web-app-boilerplate.simshadows.com/",
     title: "Sim Figures Out Webpack",
     author: "simshadows",
     description: "I have no idea what I'm doing!",
     keywords: "minimal, boilerplate, webpack, react, typescript",
-    embedImage: "PLACEHOLDER",
+    embedImage: null,
 };
 
 const indexEjsPlugin = {

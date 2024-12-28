@@ -1,15 +1,13 @@
 import React from "react";
-import renderer from 'react-test-renderer';
+import {render} from "@testing-library/react";
 
 import {HelloMessage} from "./HelloMessage";
 
 const element = React.createElement;
 
 test("gets 42, adds 1, and returns the expected string", () => {
-    const component = renderer.create(
+    const {container} = render(
         element(HelloMessage, {num: 42}, null),
     );
-    let tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
 });
-

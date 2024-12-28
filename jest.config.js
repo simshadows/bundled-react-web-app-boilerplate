@@ -1,5 +1,7 @@
 module.exports = {
 
+    testEnvironment: "jsdom",
+
     // Customizes where Jest stores snapshot files
     snapshotResolver: "<rootDir>/internals/jestSnapshotResolver.js",
 
@@ -21,7 +23,7 @@ module.exports = {
 
     // A map from regular expressions to paths to transformers
     transform: {
-        "^.+\\.(ts|tsx)?$": "ts-jest",
+        "^.+\\.(ts|tsx)?$": "esbuild-jest",
     }
 
 };

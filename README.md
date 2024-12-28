@@ -48,19 +48,6 @@ Or, you can use the development server:
 yarn start
 ```
 
-## How do I publish to GitHub Pages?
-
-I don't really have a good solution for this right now, but this is the best I've come up with.
-
-In `package.json`, I defined two scripts
-
-- `ghpages-build` will compile to `./docs`.
-- `ghpages-serve` will start a local server hosting the `./docs` directory.
-
-Simply run `ghpages-build`, commit to a separate branch, and then set up GitHub to host the `/docs` folder in that branch.
-
-The GitHub repo that this is being hosted in should hopefully serve as an example of how this looks like.
-
 ## Auto-generated Files
 
 Please avoid modifying the following files by hand:
